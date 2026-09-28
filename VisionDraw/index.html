@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VisionDraw: Havada Çizim Uygulaması — Açıklama Notları</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary: #1e3a8a;
+        --primary-light: #eff6ff;
+        --secondary: #0284c7;
+        --accent: #dc2626;
+        --text: #1f2937;
+        --text-muted: #4b5563;
+        --border: #e2e8f0;
+        
+        /* Modern One Dark Kod Teması */
+        --bg-code: #21252b;
+        --code-text: #abb2bf;
+        --code-inline: #61afef;
+        --code-selection: #3e4451;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.75;
+        color: var(--text);
+        background-color: #f8fafc;
+        padding: 40px 20px;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        background-color: #ffffff;
+        padding: 48px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        border: 1px solid var(--border);
+    }
+
+    h1 {
+        color: var(--primary);
+        font-size: 28px;
+        font-weight: 700;
+        border-bottom: 3px solid var(--secondary);
+        padding-bottom: 12px;
+        margin-bottom: 24px;
+        line-height: 1.3;
+    }
+
+    h2 {
+        color: var(--primary);
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 36px;
+        margin-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 8px;
+    }
+
+    h3 {
+        color: var(--secondary);
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 24px;
+        margin-bottom: 10px;
+    }
+
+    p { margin-bottom: 14px; }
+
+    /* Metin içi kod (Inline Code) */
+    code {
+        background-color: var(--bg-code);
+        color: var(--code-inline);
+        padding: 3px 7px;
+        border-radius: 5px;
+        font-family: 'Fira Code', Consolas, monospace;
+        font-size: 0.88em;
+        font-weight: 500;
+    }
+
+    /* Büyük Kod Blokları */
+    pre {
+        background-color: var(--bg-code);
+        color: var(--code-text);
+        padding: 18px;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-family: 'Fira Code', Consolas, monospace;
+        font-size: 13.5px;
+        line-height: 1.55;
+        margin: 16px 0;
+        border: 1px solid #2d3748;
+    }
+    
+    pre code {
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+    }
+
+    pre ::selection, code ::selection {
+        background: var(--code-selection);
+        color: #ffffff;
+    }
+
+    .callout {
+        background-color: var(--primary-light);
+        border-left: 4px solid var(--secondary);
+        padding: 16px 20px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+        font-size: 15px;
+    }
+
+    .callout-title {
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 6px;
+        display: block;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 14px;
+    }
+
+    th, td {
+        border: 1px solid var(--border);
+        padding: 12px 14px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f1f5f9;
+        color: var(--primary);
+        font-weight: 600;
+    }
+
+    ul, ol { padding-left: 24px; margin-bottom: 16px; }
+    li { margin-bottom: 8px; }
+
+    @media (max-width: 640px) {
+        body { padding: 12px; }
+        .container { padding: 20px; border-radius: 8px; }
+        h1 { font-size: 22px; }
+        h2 { font-size: 18px; }
+        pre { font-size: 12px; padding: 12px; }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>VisionDraw: Havada Çizim Uygulaması — Açıklama Notları</h1>
+
+    <div class="callout">
+        <span class="callout-title">Dersin Amacı</span>
+        Bu eğitim; katılımcıların değişkenler, listeler, döngüler ve fonksiyonlar gibi temel Python kavramlarını somut bir projede birleştirmesini hedefler. Bilgisayarlı görü (OpenCV) ve derin öğrenme (MediaPipe) kullanarak işaret parmağıyla ekranda havaya çizim yapmayı adım adım öğreneceğiz.
+    </div>
+
+    <h2>1. Kullanılan Kütüphaneler ve Rolleri</h2>
+    <ul>
+        <li><strong>OpenCV (<code>cv2</code>):</strong> Bilgisayarlı görü kütüphanesidir. Kamerayı açar, pencereleri yönetir, pikselleri okur ve ekrana geometrik şekiller (daire, çizgi, metin) çizer.</li>
+        <li><strong>MediaPipe:</strong> Google tarafından geliştirilen derin öğrenme kütüphanesidir. Kamera karesindeki eli milisaniyeler içinde tespit eder ve eklemlerin koordinatlarını üretir.</li>
+        <li><strong>NumPy:</strong> Üzerine çizim yapacağımız boş dijital tuvali (canvas) temsil etmek için kullanılan matris kütüphanesidir.</li>
+    </ul>
+
+<pre><code># Kurulum Komutu
+pip install opencv-python mediapipe numpy</code></pre>
+
+    <h2>2. Zihinde Canlandırma: 4 Temel Benzetme</h2>
+    <ol>
+        <li><strong>Flipbook (Çevirmeli Defter Mantığı):</strong> Bilgisayar için video yoktur; ardışık fotoğraflar (frame) vardır. <code>while True</code> döngüsü bir defteri çevirir gibi saniyede ~30 kareyi peş peşe işler.</li>
+        <li><strong>Ters Çevrilmiş Y Ekseni (Piksel Dünyası):</strong> Bilgisayar ekranlarında <strong>sol üst köşe <code>(0,0)</code></strong> noktasıdır. Sağa gittikçe X artar, <strong>aşağı indikçe Y büyür</strong>.</li>
+        <li><strong>21 Raptiye (Landmarks):</strong> MediaPipe ele 21 adet sanal raptiye iliştirir. Çizim için sadece <strong>8 (işaret parmağı ucu)</strong> ve durum kontrolleri için <strong>6 (orta eklem)</strong> ile <strong>12 (orta parmak ucu)</strong> noktalarını kullanırız.</li>
+        <li><strong>Asetat Kâğıdı (Canvas Mantığı):</strong> Doğrudan kamera karesine çizersek el hareket ettikçe çizgi kaybolur. Kameranın önüne şeffaf bir kâğıt koyduğumuzu varsayarız; çizimleri buna yapar, sonra kamerayla birleştiririz.</li>
+    </ol>
+
+    <h2>3. Satır Satır Adım Analizi</h2>
+
+    <h3>Adım 1: Kütüphaneler ve Model Kurulumu</h3>
+<pre><code>import cv2
+import mediapipe as mp
+import numpy as np
+
+mp_hands = mp.solutions.hands
+hands = mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7)
+mp_draw = mp.solutions.drawing_utils</code></pre>
+    <ul>
+        <li><code>mp_hands</code>, <code>hands</code>, <code>mp_draw</code> birer değişkendir.</li>
+        <li><code>Hands(...)</code> ilk harfi büyük olduğu için bir sınıftır (class); çalışmaya hazır bir el tespit asistanı üretip <code>hands</code> değişkenine bağlarız.</li>
+        <li><code>max_num_hands=1</code>: Ekranda birden fazla el olsa bile sadece tek bir ele odaklanmasını sağlar.</li>
+        <li><code>min_detection_confidence=0.7</code>: Modelin %70 emin olmadan koordinat üretmesini engelleyerek ekrandaki titremeleri ve hatalı algılamaları önler.</li>
+    </ul>
+
+    <h3>Adım 2: Kamera ve Tuval Değişkenleri</h3>
+<pre><code>cap = cv2.VideoCapture(0)
+canvas = None
+prev_x, prev_y = 0, 0
+draw_color = (0, 0, 255)</code></pre>
+    <ul>
+        <li><code>cap = cv2.VideoCapture(0)</code>: Bilgisayarın varsayılan dahili kamerasını başlatır.</li>
+        <li><code>canvas = None</code>: Tuvali başlangıçta boş tanımlarız; ilk kamera karesi geldiğinde kameranın gerçek çözünürlüğüne göre boyutlandırılır.</li>
+        <li><code>prev_x, prev_y = 0, 0</code>: Kalemin "az önce nerede olduğunu" aklımızda tutan hafıza değişkenleridir.</li>
+        <li><code>draw_color = (0, 0, 255)</code>: OpenCV renkleri <strong>BGR (Blue, Green, Red)</strong> tuttuğu için bu kod saf kırmızı renktir.</li>
+    </ul>
+
+    <h3>Adım 3: Sonsuz Video Döngüsü ve Ön İşlemler</h3>
+<pre><code>while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    frame = cv2.flip(frame, 1)
+    h, w, c = frame.shape
+
+    if canvas is None:
+        canvas = np.zeros((h, w, 3), dtype=np.uint8)
+
+    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    results = hands.process(rgb_frame)</code></pre>
+    <ul>
+        <li><code>cv2.flip(frame, 1)</code>: Görüntüyü yatayda ters çevirir (ayna etkisi). Elimizi sağa götürdüğümüzde ekrandaki çizgi de sağa gitsin diye şarttır.</li>
+        <li><code>np.zeros((h, w, 3), dtype=np.uint8)</code>: Kamerayla birebir aynı boyutta, tüm pikselleri sıfır (tamamen siyah) boş bir tuval oluşturur.</li>
+        <li><code>cv2.cvtColor(..., cv2.COLOR_BGR2RGB)</code>: OpenCV BGR okurken MediaPipe RGB bekler; bu tercüme yapılıp yapay zekaya verilir.</li>
+    </ul>
+
+    <h3>Adım 4: Koordinatların Piksele Dönüştürülmesi ve Parmak Mantığı</h3>
+<pre><code>    if results.multi_hand_landmarks:
+        for hand_landmarks in results.multi_hand_landmarks:
+            lm = hand_landmarks.landmark
+
+            ix, iy = int(lm[8].x * w), int(lm[8].y * h)
+            mx, my = int(lm[12].x * w), int(lm[12].y * h)
+
+            index_open = lm[8].y < lm[6].y
+            middle_open = lm[12].y < lm[10].y</code></pre>
+    <ul>
+        <li><code>if results.multi_hand_landmarks:</code>: Ekranda el yoksa MediaPipe <code>None</code> döner; bu kontrol programın çökmesini engeller.</li>
+        <li><strong>Normalize Koordinat:</strong> MediaPipe koordinatları <code>0.0</code> ile <code>1.0</code> arasında oran verir. Ekranın genişliği (w) ve yüksekliği (h) ile çarparak gerçek piksel değerini buluruz.</li>
+        <li><strong>Parmak Açık mı Mantığı:</strong> Y ekseni aşağı doğru arttığı için, parmak ucu orta eklemden daha yukarıdaysa Y değeri daha küçüktür: <code>lm[8].y &lt; lm[6].y</code>.</li>
+    </ul>
+
+    <h3>Adım 5: Çizim ve Gezinme Modları</h3>
+<pre><code>            if index_open and not middle_open:
+                cv2.circle(frame, (ix, iy), 8, draw_color, cv2.FILLED)
+                if prev_x == 0 and prev_y == 0:
+                    prev_x, prev_y = ix, iy
+                cv2.line(canvas, (prev_x, prev_y), (ix, iy), draw_color, 5)
+                prev_x, prev_y = ix, iy
+
+            elif index_open and middle_open:
+                prev_x, prev_y = 0, 0
+                cv2.circle(frame, (ix, iy), 12, (255, 0, 0), 2)
+            else:
+                prev_x, prev_y = 0, 0
+
+            mp_draw.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+    else:
+        prev_x, prev_y = 0, 0</code></pre>
+    <ul>
+        <li><strong>Çizim Modu (Sadece İşaret Parmağı):</strong> Kalem kâğıda değer; önceki nokta ile anlık nokta arasına <code>canvas</code> üzerinde çizgi çekilir.</li>
+        <li><strong>Gezinme Modu (İşaret + Orta Parmak):</strong> Kalem kâğıttan kaldırılır (<code>prev_x, prev_y = 0, 0</code>); ekranda mavi halkayla imleç takip edilir ama çizim durur.</li>
+    </ul>
+
+    <h3>Adım 6: Tuval Birleştirme ve Ekrana Basma</h3>
+<pre><code>    combined_frame = cv2.addWeighted(frame, 1.0, canvas, 0.7, 0)
+    cv2.putText(combined_frame, "Temizle: C | Cikis: Q", (15, 35),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
+    cv2.imshow("VisionDraw", combined_frame)</code></pre>
+    <ul>
+        <li><code>cv2.addWeighted</code> formülü: <code>(frame * 1.0) + (canvas * 0.7)</code>. Tuvalin siyah kısımları sıfır (0) değerinde olduğu için kamerayı bozmaz; sadece renkli fırça çizgileri kameranın üzerine biner.</li>
+    </ul>
+
+    <h3>Adım 7: Tuş Kontrolleri ve Kapanış</h3>
+<pre><code>    key = cv2.waitKey(1) & 0xFF
+    if key == ord('q'):
+        break
+    elif key == ord('c'):
+        canvas = np.zeros((h, w, 3), dtype=np.uint8)
+
+cap.release()
+cv2.destroyAllWindows()</code></pre>
+    <ul>
+        <li><code>cv2.waitKey(1) & 0xFF</code>: Pencerenin donmaması için 1 ms bekler ve basılan tuşu okur.</li>
+        <li><code>ord('c')</code>: C tuşuna basıldığında tuvali yeniden simsiyah yaparak ekranı temizler (Clear).</li>
+        <li><code>ord('q')</code>: Q tuşuna basıldığında döngüyü kırar (Quit).</li>
+    </ul>
+
+    <h2>4. Eksiksiz Proje Kodu (`vision_draw.py`)</h2>
+<pre><code>import cv2
+import mediapipe as mp
+import numpy as np
+
+mp_hands = mp.solutions.hands
+mp_draw = mp.solutions.drawing_utils
+hands = mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7)
+
+cap = cv2.VideoCapture(0)
+canvas = None
+prev_x, prev_y = 0, 0
+draw_color = (0, 0, 255)
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    frame = cv2.flip(frame, 1)
+    h, w, c = frame.shape
+
+    if canvas is None:
+        canvas = np.zeros((h, w, 3), dtype=np.uint8)
+
+    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    results = hands.process(rgb_frame)
+
+    if results.multi_hand_landmarks:
+        for hand_landmarks in results.multi_hand_landmarks:
+            lm = hand_landmarks.landmark
+
+            ix, iy = int(lm[8].x * w), int(lm[8].y * h)
+            mx, my = int(lm[12].x * w), int(lm[12].y * h)
+
+            index_open = lm[8].y < lm[6].y
+            middle_open = lm[12].y < lm[10].y
+
+            if index_open and not middle_open:
+                cv2.circle(frame, (ix, iy), 8, draw_color, cv2.FILLED)
+                if prev_x == 0 and prev_y == 0:
+                    prev_x, prev_y = ix, iy
+                cv2.line(canvas, (prev_x, prev_y), (ix, iy), draw_color, 5)
+                prev_x, prev_y = ix, iy
+
+            elif index_open and middle_open:
+                prev_x, prev_y = 0, 0
+                cv2.circle(frame, (ix, iy), 12, (255, 0, 0), 2)
+            else:
+                prev_x, prev_y = 0, 0
+
+            mp_draw.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+    else:
+        prev_x, prev_y = 0, 0
+
+    combined_frame = cv2.addWeighted(frame, 1.0, canvas, 0.7, 0)
+    cv2.putText(combined_frame, "Temizle: C | Cikis: Q", (15, 35),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
+    cv2.imshow("VisionDraw", combined_frame)
+
+    key = cv2.waitKey(1) & 0xFF
+    if key == ord('q'):
+        break
+    elif key == ord('c'):
+        canvas = np.zeros((h, w, 3), dtype=np.uint8)
+
+cap.release()
+cv2.destroyAllWindows()</code></pre>
+
+    <h2>5. Hızlı Sorun Giderme Rehberi</h2>
+    <table>
+        <tr>
+            <th>Problem</th>
+            <th>Olası Neden</th>
+            <th>Hızlı Çözüm</th>
+        </tr>
+        <tr>
+            <td><strong>Kamera Açılmıyor</strong></td>
+            <td>Kamera indeksi 0 değildir veya arkada başka uygulama kullanıyordur.</td>
+            <td><code>VideoCapture(1)</code> deneyin, diğer kamera programlarını kapatın.</td>
+        </tr>
+        <tr>
+            <td><strong>El Titriyor / Çizgi Kopuyor</strong></td>
+            <td>Işık yetersizdir veya ten rengi arka planla karışıyordur.</td>
+            <td>Işığı artırın ya da <code>min_detection_confidence=0.5</code> yapın.</td>
+        </tr>
+        <tr>
+            <td><strong>Çizim Ters Yöne Gidiyor</strong></td>
+            <td>Ayna etkisi atlanmıştır.</td>
+            <td><code>cv2.flip(frame, 1)</code> satırını kontrol edin.</td>
+        </tr>
+        <tr>
+            <td><strong>Pencere Donuyor</strong></td>
+            <td><code>waitKey(1)</code> eksiktir.</td>
+            <td>Döngü içinde <code>cv2.waitKey(1)</code> olduğunu doğrulayın.</td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>
