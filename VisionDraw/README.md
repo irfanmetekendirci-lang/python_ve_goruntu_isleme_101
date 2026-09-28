@@ -1,3 +1,8 @@
+### 📖 Web Üzerinden Ders Notları
+Dersin tüm teorik mantığına, adım adım kod analizine ve açıklamalarına web üzerinden erişmek için:
+
+👉 **[VisionDraw Açıklama Notlarını Görüntüle](https://irfanmetekendirci-lang.github.io/python_ve_goruntu_isleme_101/VisionDraw/)**
+
 # VisionDraw 🎨🖐️
 
 VisionDraw, web kamerası karşısında el hareketlerini kullanarak havada çizim yapmanızı sağlayan basit ve eğitici bir görüntü işleme uygulamasıdır. 
