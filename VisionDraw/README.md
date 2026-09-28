@@ -34,7 +34,7 @@ pip install opencv-python mediapipe numpy
 Kurulum tamamlandıktan sonra uygulamayı başlatmak için:
 
 ```bash
-python vision_draw.py
+python VisionDraw.py
 ```
 
 ---
