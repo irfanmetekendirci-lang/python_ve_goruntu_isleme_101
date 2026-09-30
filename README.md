@@ -78,27 +78,29 @@ Projeyi yerel bilgisayarınızda çalıştırmak için **Python 3.8+** ve **VS C
 
 ## 📂 Dizin Yapısı
 
-    python_ve_goruntu_isleme_101/
-    ├── README.md
-    ├── hafta1/
-    │   ├── ders1/
-    │   │   ├── bolum1_degiskenler.py
-    │   │   ├── bolum2_koleksiyonlar.py
-    │   │   ├── bolum3_kosullar_donguler.py
-    │   │   └── bolum4_ders_sonu_pratigi.py
-    │   └── ders2/
-    │       ├── bolum1_fonksiyonlar.py
-    │       ├── bolum2_numpy_nedir.py
-    │       ├── bolum3_pandas_nedir.py
-    │       └── bolum4_kurulum_ve_test.py
-    ├── hafta2/
-    │   ├── ders3/
-    │   └── ders4/
-    └── VisionDraw/
-        ├── vision_draw.py
-        ├── requirements.txt
-        └── README.md
-
+* python_ve_goruntu_isleme_101/
+  * README.md
+  * LICENSE
+  * gun1/
+    * adim1.py
+    * adim2.py
+    * adim3.py
+    * adim4.py
+  * gun2/
+    * 2adim1.py
+    * 2adim2.py
+    * 2adim3.py
+    * 2adim4.py
+  * gun3/
+    * 3adim1.py
+    * 3adim2.py
+    * 3adim3.py
+  * VisionDraw/
+    * VisionDraw.py
+    * requirements.txt
+    * README.md
+    * index.html
+    
 ---
 
 ## 🤝 Katkı ve İletişim
