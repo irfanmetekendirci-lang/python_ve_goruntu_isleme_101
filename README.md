@@ -100,7 +100,7 @@ Projeyi yerel bilgisayarınızda çalıştırmak için **Python 3.8+** ve **VS C
     * requirements.txt
     * README.md
     * index.html
-    
+
 ---
 
 ## 🤝 Katkı ve İletişim
