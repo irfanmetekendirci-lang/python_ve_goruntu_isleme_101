@@ -81,6 +81,7 @@ Projeyi yerel bilgisayarınızda çalıştırmak için **Python 3.8+** ve **VS C
 * python_ve_goruntu_isleme_101/
   * README.md
   * LICENSE
+  * MediaPipe-Hands-21-landmarks.jpg
   * gun1/
     * adim1.py
     * adim2.py
@@ -95,6 +96,10 @@ Projeyi yerel bilgisayarınızda çalıştırmak için **Python 3.8+** ve **VS C
     * 3adim1.py
     * 3adim2.py
     * 3adim3.py
+  * gun4/
+    * 4adim1.py
+    * 4adim2.py
+    * 4adim3.py
   * VisionDraw/
     * VisionDraw.py
     * requirements.txt
