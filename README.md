@@ -31,11 +31,12 @@ Bu repo, **Ankara Üniversitesi YAZGİT** bünyesinde düzenlenen 2 haftalık (4
   * BGR - RGB renk dönüşümleri ve MediaPipe Hands modelinin çağrılması
   * Elin 21 eklem noktasını (landmarks) canlı görüntü üzerinde tespit etme ve çizdirme
 
-* **4. Gün - Jest Algılama ve Akıllı Çizim (90 Dakika)**
-  * İşaret parmağı ucu koordinatlarını (Landmark 8) piksel değerlerine dönüştürme
-  * Parmak hareketlerini takip ederek ekranda canlı çizim/işaretleme yapma
-  * Projeyi GitHub portföyüne ekleme adımları
-
+* **4. Gün - Jest Algılama ve Akıllı Parmak Sayıcı (90 Dakika)**
+  * Ekran koordinat sistemi mantığı: $Y$ değeri aşağı indikçe büyür, tepeye çıktıkça küçülür kuralı ile parmak açık/kapalı kontrolü (lm[8].y < lm[6].y)
+  * Listeler ([8, 12, 16, 20]) ve for döngüsü yardımıyla açık parmakları sayma algoritması
+  * Başparmak kontrolü (X ekseni yatay hareket analizi) ile 5 parmağın tamamını sayma
+  * cv2.rectangle ile sol üst köşeye gösterge paneli ekleme ve basit jest algılama (Yumruk / Açık El)
+  * Bağımsız VisionDraw projesinin incelenmesi ve portföye eklenme rehberi
 ---
 
 ## 🎨 Bitirme Projesi: VisionDraw (Havada Çizim)
