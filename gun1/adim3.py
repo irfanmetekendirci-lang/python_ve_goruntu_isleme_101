@@ -28,9 +28,27 @@ else:
 # Liste bitene kadar döngü kendi kendine döner."
 
 x_noktalari = [120, 350, 50, 480, 210]
-
+threshold = 200
+sayac = 1
 for x in x_noktalari:
     print("Sıradaki piksel taranıyor:", x)
+
+while True:
+ # Eğer listede hiç eleman kalmadıysa döngüden çık
+    if not x_noktalari:
+        print("Tüm noktalar tarandı!")
+        break
+
+    x = x_noktalari.pop(0)  # İlk elemanı çektik ve listeden sildik.
+    print("Sıradaki piksel taranıyor:", x)
+
+    if x > threshold:
+        print("-> Eşik değerinden büyük koordinat:", x)
+
+while sayac < 5:
+    print("sayaç = ", sayac)
+    sayac += 1
+print("Döngü bitti...")
 
 # ------------------------------------------------------------------------------
 # [DUR & ÇALIŞTIR]

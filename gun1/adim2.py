@@ -14,8 +14,15 @@ parmak_koordinati = [320, 240]  # [X pikseli, Y pikseli]
 # 0. eleman = Listenin 1. elemanıdır.
 # Yanına köşeli parantez açıp indeks numarasını yazarak istediğimiz sıradaki elemanı çekeriz."
 
+print("Parmak Koordinatları Listesi:", parmak_koordinati)
 print("X koordinatı (0. indeks):", parmak_koordinati[0])
 print("Y koordinatı (1. indeks):", parmak_koordinati[1])
+
+# iç içe liste örneği:
+ornekListe = [45, 21, [12, 8], [13, [75, 42], 5], 78]
+print("21:", ornekListe[1])
+print("8:", ornekListe[2][1])
+print("42:", ornekListe[3][1][1])
 
 # [NOKTA (.) MANTIĞI]:
 # "Şimdi çok kritik bir soru: Neden araya nokta koyuyoruz? (noktalar.append gibi)

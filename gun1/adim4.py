@@ -35,7 +35,6 @@ print("Sadece SAĞ taraftaki noktalar:", sagdaki_noktalar)
 # ------------------------------------------------------------------------------
 # [DUR & KONTROL]
 # 1. Kodu çalıştır ve terminal çıktısını sınıfa göster.
-# 2. Sınıfa meydan okuma (Mini Challenge):
-#    "Peki ekranın SOLUNDAKİ (320'den küçük) noktaları almak isteseydik kodda nereyi değiştirirdik?"
+# 2. "Peki ekranın SOLUNDAKİ (320'den küçük) noktaları almak isteseydik kodda nereyi değiştirirdik?"
 #    Cevap: if nokta < 320
 # ------------------------------------------------------------------------------
