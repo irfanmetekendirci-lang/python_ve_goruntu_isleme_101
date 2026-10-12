@@ -15,13 +15,13 @@
 # 'sagdaki_noktalar' adında yeni, temiz bir listeye toplamak!"
 
 # 1. Adım: Ham verimiz (Temsili kamera koordinatları)
-gelen_koordinatlar = [110, 450, 320, 580, 95, 410, 200]
+gelenKoordinat = [120, 458, 115, 600, 37, 78, 463, 112]
 
 # 2. Adım: Filtrelenenleri koyacağımız boş bir çekmece/kutu açıyoruz
 sagdaki_noktalar = []
 
 # 3. Adım: For döngüsüyle tüm noktaları tek tek geziyoruz
-for nokta in gelen_koordinatlar:
+for nokta in gelenKoordinat:
     # 4. Adım: Şartımızı koşuyoruz (Nokta 320'den büyük mü?)
     if nokta > 320:
         # Şart tuttuysa, .append() yeteneğini kullanarak boş listemize atıyoruz!
@@ -29,7 +29,7 @@ for nokta in gelen_koordinatlar:
 
 # "Döngünün DIŞINA çıkıyoruz (girintiyi siliyoruz) çünkü sonucu sadece 1 kere bastırmak istiyoruz."
 print("--- FİLTRELEME SONUCU ---")
-print("Kameradan gelen tüm noktalar :", gelen_koordinatlar)
+print("Kameradan gelen tüm noktalar :", gelenKoordinat)
 print("Sadece SAĞ taraftaki noktalar:", sagdaki_noktalar)
 
 # ------------------------------------------------------------------------------
