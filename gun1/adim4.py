@@ -3,7 +3,7 @@
 # SÜRE: ~15-20 Dakika
 # ==============================================================================
 
-# "Şimdi bugün öğrendiğimiz 3 büyük silahı birleştireceğiz:
+# "Şimdi öğrendiğimiz 3 büyük silahı birleştireceğiz:
 # 1. Listeler (Veriyi tutmak için)
 # 2. Döngüler (Listenin içini tek tek gezmek için)
 # 3. Koşullar (İstediğimiz noktayı seçip ayıklamak için)
@@ -34,7 +34,7 @@ print("Sadece SAĞ taraftaki noktalar:", sagdaki_noktalar)
 
 # ------------------------------------------------------------------------------
 # [DUR & KONTROL]
-# 1. Kodu çalıştır ve terminal çıktısını sınıfa göster.
+# 1. Kodu çalıştır.
 # 2. "Peki ekranın SOLUNDAKİ (320'den küçük) noktaları almak isteseydik kodda nereyi değiştirirdik?"
 #    Cevap: if nokta < 320
 # ------------------------------------------------------------------------------

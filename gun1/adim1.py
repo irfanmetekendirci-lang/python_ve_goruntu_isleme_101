@@ -30,7 +30,5 @@ print("Kamera çalışıyor mu?:", kamera_acik_mi)
 # ------------------------------------------------------------------------------
 # [DUR & ÇALIŞTIR]
 # 1. VS Code sağ üstteki 'Run' üçgenine bas veya terminale 'python bolum1_degiskenler.py' yaz.
-# 2. Terminal çıktısını göster.
-# 3. Sınıfı kontrol et yazan var mı.
-# 4. [OLASI HATA]: Tırnağı kapatmayı unutanlar 'SyntaxError: unterminated string literal' alır.
+# 2. [OLASI HATA]: Tırnağı kapatmayı unutanlar 'SyntaxError: unterminated string literal' alır.
 # ------------------------------------------------------------------------------

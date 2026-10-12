@@ -56,7 +56,4 @@ print("Kameranın genişliği:", kamera_ayari["genislik"])
 # ------------------------------------------------------------------------------
 # [DUR & ÇALIŞTIR]
 # 1. Kodu çalıştır.
-# 2. Tahtada parmak_koordinati[0] ve [1] çıktısını göster.
-# 3. [ÖĞRENCİYE VURGU]: "Haftaya MediaPipe ile kamerayı açtığımızda elinizin 8. noktası olan
-#    işaret parmağınızı çekerken 'landmarks[8]' yazacağız. İşte o köşeli parantez tam olarak bu!"
 # ------------------------------------------------------------------------------

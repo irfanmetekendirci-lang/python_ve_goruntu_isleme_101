@@ -10,7 +10,6 @@
 x_koordinati = 450
 ekran_ortasi = 320
 
-# [ÖĞRENCİYE GİRİNTİ (INDENTATION) UYARISI]:
 # "Python'da süslü parantez blokları yoktur. Bir kodun if'in İÇİNDE olduğunu anlatmak için
 # klavyedeki TAB tuşuna basarak içeri girinti (4 boşluk) bırakırız. İçerideki kodlar sadece şart tutarsa çalışır!"
 
@@ -52,7 +51,6 @@ print("Döngü bitti...")
 
 # ------------------------------------------------------------------------------
 # [DUR & ÇALIŞTIR]
-# 1. Kodu çalıştır, terminalde döngünün sayıları nasıl alt alta döktüğünü göster.
-# 2. [OLASI HATA]: 'IndentationError: expected an indented block'.
-#    Öğrenci if veya for'un altındaki satırı içeri kaydırmayı unutmuştur. Hemen TAB tuşunu göster.
+# 1. Kodu çalıştır.
+# 2. [OLASI HATA]: 'IndentationError: expected an indented block'. Girinti hatası. TAB tuşu ile çöz.
 # ------------------------------------------------------------------------------
