@@ -1,0 +1,50 @@
+import cv2
+import mediapipe as mp
+
+# Mediapipe ile model çağırdık
+mp_hands = mp.solutions.hands
+mp_draw = mp.solutions.drawing_utils
+
+hands = mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7)
+
+
+kamera = cv2.VideoCapture(0)    
+
+while True:
+
+    basarili ,kare = kamera.read()
+
+    if not basarili:
+        print("kamera baslatilamadi!")
+        break
+
+    kare = cv2.flip(kare, 1)
+
+    h, w, c = kare.shape
+
+    rgb_kare = cv2.cvtColor(kare, cv2.COLOR_BGR2RGB)
+
+    results = hands.process(rgb_kare)
+
+    if results.multi_hand_landmarks:
+
+        for hand_landmarks in results.multi_hand_landmarks:
+            mp_draw.draw_landmarks(kare, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+
+            lm = hand_landmarks.landmark
+
+            ix = int(lm[8].x * w)
+            iy = int(lm[8].y * h)
+
+            cv2.circle(kare, (ix, iy), 10, (0,0,255), cv2.FILLED)
+
+            cv2.putText(kare, f"Isaret Parmagi: X = {ix}, Y = {iy}", (15,35), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,255,0), 2)
+
+    cv2.imshow("Kemera Denemesi", kare)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+kamera.release()
+cv2.destroyAllWindows()
+print("kapandı!")

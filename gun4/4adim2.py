@@ -10,7 +10,7 @@ mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7)
 mp_draw = mp.solutions.drawing_utils
 
-cap = cv2.VideoCapture(0)
+kamera = cv2.VideoCapture(0)
 
 # MediaPipe'ta 4 ana parmağın uç noktaları (Landmark ID):
 # 8: İşaret Parmağı Ucu
@@ -20,14 +20,14 @@ cap = cv2.VideoCapture(0)
 parmak_uclari = [8, 12, 16, 20]
 
 while True:
-    ret, frame = cap.read()
-    if not ret:
+    basarili, kare = kamera.read()
+    if not basarili:
         print("Kamera görüntüsü alınamadı!")
         break
 
-    frame = cv2.flip(frame, 1)
-    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    results = hands.process(rgb_frame)
+    kare = cv2.flip(kare, 1)
+    rgb_kare = cv2.cvtColor(kare, cv2.COLOR_BGR2RGB)
+    results = hands.process(rgb_kare)
 
     if results.multi_hand_landmarks:
         for hand_landmarks in results.multi_hand_landmarks:
@@ -46,15 +46,15 @@ while True:
                     acik_parmak_sayisi += 1
 
             # 4 parmağın toplam sonucunu ekrana yazdırıyoruz:
-            cv2.putText(frame, f"Acik Parmak: {acik_parmak_sayisi}", (20, 50),
+            cv2.putText(kare, f"Acik Parmak: {acik_parmak_sayisi}", (20, 50),
                         cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 0, 0), 2)
 
-            mp_draw.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+            mp_draw.draw_landmarks(kare, hand_landmarks, mp_hands.HAND_CONNECTIONS)
 
-    cv2.imshow("Gun 4 - Adim 2: Parmak Sayar", frame)
+    cv2.imshow("Gun 4 - Adim 2: Parmak Sayar", kare)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-cap.release()
+kamera.release()
 cv2.destroyAllWindows()

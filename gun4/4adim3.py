@@ -10,20 +10,20 @@ mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7)
 mp_draw = mp.solutions.drawing_utils
 
-cap = cv2.VideoCapture(0)
+kamera = cv2.VideoCapture(0)
 
 # Dört parmağın uç indeksleri:
 parmak_uclari = [8, 12, 16, 20]
 
 while True:
-    ret, frame = cap.read()
-    if not ret:
+    basarili, kare = kamera.read()
+    if not basarili:
         print("Kamera görüntüsü alınamadı!")
         break
 
-    frame = cv2.flip(frame, 1)
-    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    results = hands.process(rgb_frame)
+    kare = cv2.flip(kare, 1)
+    rgb_kare = cv2.cvtColor(kare, cv2.COLOR_BGR2RGB)
+    results = hands.process(rgb_kare)
 
     if results.multi_hand_landmarks:
         for hand_landmarks in results.multi_hand_landmarks:
@@ -43,26 +43,26 @@ while True:
 
             # Sol üst köşeye şık bir bilgi kutusu çiziyoruz (Piksel boyama):
             # cv2.rectangle(hedef, sol_ust_kose, sag_alt_kose, renk, kalinlik)
-            cv2.rectangle(frame, (10, 10), (220, 110), (0, 0, 0), cv2.FILLED)
+            cv2.rectangle(kare, (10, 10), (220, 110), (0, 0, 0), cv2.FILLED)
 
             # Ekrana büyük punto ile parmak sayısını basıyoruz:
-            cv2.putText(frame, str(acik_parmak_sayisi), (85, 85),
+            cv2.putText(kare, str(acik_parmak_sayisi), (85, 85),
                         cv2.FONT_HERSHEY_SIMPLEX, 2.5, (0, 255, 0), 5)
 
             # Basit Jest Tanıma (Örnek Karar Mekanizması):
             if acik_parmak_sayisi == 0:
-                cv2.putText(frame, "JEST: YUMRUK", (10, 150),
+                cv2.putText(kare, "JEST: YUMRUK", (10, 150),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
             elif acik_parmak_sayisi == 5:
-                cv2.putText(frame, "JEST: ACIK EL", (10, 150),
+                cv2.putText(kare, "JEST: ACIK EL", (10, 150),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
 
-            mp_draw.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+            mp_draw.draw_landmarks(kare, hand_landmarks, mp_hands.HAND_CONNECTIONS)
 
-    cv2.imshow("Gun 4 - Adim 3: Akilli Parmak Sayaci", frame)
+    cv2.imshow("Gun 4 - Adim 3: Akilli Parmak Sayaci", kare)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-cap.release()
+kamera.release()
 cv2.destroyAllWindows()
