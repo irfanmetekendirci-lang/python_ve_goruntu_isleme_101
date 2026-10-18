@@ -4,39 +4,56 @@ Bu repo, **Ankara Üniversitesi YAZGİT** bünyesinde düzenlenen 2 haftalık (4
 
 > **Vizyonumuz:** Yazılımcılık artık her fonksiyonu ezbere yazmak değil; sistemin mantığını, veri akışını ve neyi nerede arayacağını bilmektir. Kodu yapay zekâ da üretir, dokümantasyonda da bulursunuz. Bu eğitimin asıl amacı; kameradan gelen ham verinin koda nasıl girdiğini, koordinatların nasıl okunduğunu ve bu verilerle neler üretilebileceğini uygulamalı olarak kavramaktır.
 
+Her gün kendi klasöründe (`gun1/` … `gun4/`) adım adım ilerleyen dosyalardan oluşur. Dosyaların içindeki yorum satırları ders anlatımının kendisidir; her dosyanın sonunda **[DUR & ÇALIŞTIR]** / **[DUR & KONTROL]** bölümleri ve olası hatalar yer alır.
+
 ---
 
 ## 📅 Müfredat ve Ders Planı
 
 ### Hafta 1: Python Mantığı ve Veriyi Anlama
 
-* **1. Gün - Temel Python ve Algoritmik Düşünce (90 Dakika)**
-  * Programlama mantığı, veri tipleri (`int`, `float`, `str`, `bool`)
-  * Koleksiyonlar: Listeler (`[]`) ve Sözlükler (`{}`)
-  * Karar yapıları (`if` / `elif` / `else`) ve `for` döngüleri
-  * **Ders Sonu Pratiği:** Mini koordinat filtreleme algoritması
+#### 1. Gün - Temel Python ve Algoritmik Düşünce (`gun1/`)
 
-* **2. Gün - Fonksiyonlar ve Veri Kütüphanelerine Bakış (90 Dakika)**
-  * Fonksiyon tanımlama (`def`), parametreler ve `return` mantığı
-  * Görüntü işlemenin temeli: NumPy nedir, matris/piksel temsili
-  * Veri analizinin aracı: Pandas DataFrame yapısına kavramsal bakış
-  * Ortam kurulumları (`pip install ...`) ve OpenCV ile ilk canlı kamera testi
+| Dosya | Konu | Süre |
+|---|---|---|
+| [`adim1.py`](./gun1/adim1.py) | `print()`, değişkenler ve veri tipleri (`int`, `float`, `str`, `bool`) | ~20 dk |
+| [`adim2.py`](./gun1/adim2.py) | Listeler (`[]`), indeksleme, iç içe listeler, `.append()`, `len()` ve sözlükler (`{}`) | ~25 dk |
+| [`adim3.py`](./gun1/adim3.py) | Karar yapıları (`if` / `elif` / `else`), `for` ve `while` döngüleri | ~25 dk |
+| [`adim4.py`](./gun1/adim4.py) | **Ders sonu pratiği:** Mini koordinat filtresi (ekranın sağ yarısındaki noktaları ayıklama) | ~15-20 dk |
+
+#### 2. Gün - Fonksiyonlar ve Veri Kütüphanelerine Bakış (`gun2/`)
+
+| Dosya | Konu | Süre |
+|---|---|---|
+| [`2adim1.py`](./gun2/2adim1.py) | Fonksiyonlar (`def`), parametreler, `print` vs `return` farkı, `piksele_cevir()` örneği | ~25 dk |
+| [`2adim2.py`](./gun2/2adim2.py) | NumPy nedir? Görüntünün matris olarak temsili (`np.zeros`, `.shape`) | ~20 dk |
+| [`2adim3.py`](./gun2/2adim3.py) | Pandas'a kavramsal bakış: sözlükten `DataFrame` oluşturma | ~15 dk |
+| [`2adim4.py`](./gun2/2adim4.py) | Kütüphane kurulumları, sürüm kontrolü ve OpenCV ile ilk canlı kamera testi | ~25 dk |
 
 ---
 
 ### Hafta 2: OpenCV & MediaPipe ile Bilgisayarlı Görü
 
-* **3. Gün - OpenCV & Canlı El Tespiti (90 Dakika)**
-  * `cv2.VideoCapture` ile canlı kamera akışı yakalama ve pencere yönetimi
-  * BGR - RGB renk dönüşümleri ve MediaPipe Hands modelinin çağrılması
-  * Elin 21 eklem noktasını (landmarks) canlı görüntü üzerinde tespit etme ve çizdirme
+#### 3. Gün - OpenCV & Canlı El Tespiti (`gun3/`)
 
-* **4. Gün - Jest Algılama ve Akıllı Parmak Sayıcı (90 Dakika)**
-  * Ekran koordinat sistemi mantığı: $Y$ değeri aşağı indikçe büyür, tepeye çıktıkça küçülür kuralı ile parmak açık/kapalı kontrolü (lm[8].y < lm[6].y)
-  * Listeler ([8, 12, 16, 20]) ve for döngüsü yardımıyla açık parmakları sayma algoritması
-  * Başparmak kontrolü (X ekseni yatay hareket analizi) ile 5 parmağın tamamını sayma
-  * cv2.rectangle ile sol üst köşeye gösterge paneli ekleme ve basit jest algılama (Yumruk / Açık El)
-  * Bağımsız VisionDraw projesinin incelenmesi ve portföye eklenme rehberi
+| Dosya | Konu | Süre |
+|---|---|---|
+| [`3adim1.py`](./gun3/3adim1.py) | `cv2.VideoCapture` ile kamera akışı, `cv2.flip` ile ayna etkisi, `imshow` / `waitKey` ile pencere yönetimi | ~20 dk |
+| [`3adim2.py`](./gun3/3adim2.py) | BGR → RGB dönüşümü, MediaPipe Hands modelini başlatma ve 21 eklem noktasını çizdirme | ~30 dk |
+| [`3adim3.py`](./gun3/3adim3.py) | Normalize koordinatları piksele çevirme (`kare.shape`), işaret parmağı takibi (`cv2.circle`, `cv2.putText`) | ~20 dk |
+
+#### 4. Gün - Jest Algılama ve Akıllı Parmak Sayacı (`gun4/`)
+
+| Dosya | Konu | Süre |
+|---|---|---|
+| [`4adim1.py`](./gun4/4adim1.py) | Ekran koordinat sistemi: Y aşağı indikçe büyür → parmak açık/kapalı kontrolü (`lm[8].y < lm[6].y`) | ~25 dk |
+| [`4adim2.py`](./gun4/4adim2.py) | Parmak uçları listesi (`[8, 12, 16, 20]`) ve `for` döngüsüyle açık parmakları sayma | ~35 dk |
+| [`4adim3.py`](./gun4/4adim3.py) | Başparmak kontrolü (X ekseni) ile 5 parmak sayımı, `cv2.rectangle` ile gösterge paneli ve basit jest tanıma (Yumruk / Açık El) | ~30 dk |
+
+Günün sonunda bağımsız **VisionDraw** projesi incelenir ve portföye ekleme rehberi paylaşılır.
+
+> 💡 El eklem numaralarını (0-20) takip etmek için [`MediaPipe-Hands-21-landmarks.jpg`](./MediaPipe-Hands-21-landmarks.jpg) görselini kullanabilirsiniz.
+
 ---
 
 ## 🎨 Bitirme Projesi: VisionDraw (Havada Çizim)
@@ -58,54 +75,77 @@ Eğitimin nihai hedefi olarak geliştirilen **VisionDraw**, bilgisayar kamerası
 Projeyi yerel bilgisayarınızda çalıştırmak için **Python 3.8+** ve **VS Code** önerilir.
 
 ### 1. Repoyu Klonlayın
-    git clone [https://github.com/irfanmetekendirci-lang/python_ve_goruntu_isleme_101.git](https://github.com/irfanmetekendirci-lang/python_ve_goruntu_isleme_101.git)
-    cd python_ve_goruntu_isleme_101
+
+```bash
+git clone https://github.com/irfanmetekendirci-lang/python_ve_goruntu_isleme_101.git
+cd python_ve_goruntu_isleme_101
+```
 
 ### 2. Gerekli Kütüphaneleri Yükleyin
-    pip install opencv-python mediapipe numpy
+
+```bash
+pip install opencv-python mediapipe numpy
+```
+
+> 1. gün dosyaları hiçbir kütüphane gerektirmez. [`gun2/2adim3.py`](./gun2/2adim3.py) dosyası için ayrıca `pip install pandas` gerekir (derste kavramsal olarak gösterilir).
+>
+> VisionDraw'ın sürüm gereksinimleri için: `pip install -r VisionDraw/requirements.txt`
 
 ### 3. Örnek Kodları Çalıştırın
 
-* **1. Gün Pratik Kodu:**
-    python hafta1/ders1/bolum4_ders_sonu_pratigi.py
+Dosyalar repo kök dizininden çalıştırılabilir. Kamera açan dosyalarda pencereyi kapatmak için **`q`** tuşuna basın.
 
-* **2. Gün Kamera Test Kodu:**
-    python hafta1/ders2/bolum4_kurulum_ve_test.py
+```bash
+# 1. Gün - Ders sonu pratiği
+python gun1/adim4.py
 
-* **VisionDraw Bitirme Projesi:**
-    python VisionDraw/vision_draw.py
+# 2. Gün - Kurulum kontrolü ve ilk kamera testi
+python gun2/2adim4.py
+
+# 3. Gün - İşaret parmağı takibi
+python gun3/3adim3.py
+
+# 4. Gün - Akıllı parmak sayacı
+python gun4/4adim3.py
+
+# VisionDraw bitirme projesi
+python VisionDraw/VisionDraw.py
+```
 
 ---
 
 ## 📂 Dizin Yapısı
 
-* python_ve_goruntu_isleme_101/
-  * README.md
-  * LICENSE
-  * MediaPipe-Hands-21-landmarks.jpg
-  * gun1/
-    * adim1.py
-    * adim2.py
-    * adim3.py
-    * adim4.py
-  * gun2/
-    * 2adim1.py
-    * 2adim2.py
-    * 2adim3.py
-    * 2adim4.py
-  * gun3/
-    * 3adim1.py
-    * 3adim2.py
-    * 3adim3.py
-  * gun4/
-    * 4adim1.py
-    * 4adim2.py
-    * 4adim3.py
-  * VisionDraw/
-    * VisionDraw.py
-    * requirements.txt
-    * README.md
-    * index.html
+```
+python_ve_goruntu_isleme_101/
+├── README.md
+├── LICENSE
+├── MediaPipe-Hands-21-landmarks.jpg   # El eklem noktaları referans görseli
+├── Bellek_ornegi.jpg                  # Ders görseli
+├── gun1/                              # Temel Python
+│   ├── adim1.py
+│   ├── adim2.py
+│   ├── adim3.py
+│   └── adim4.py
+├── gun2/                              # Fonksiyonlar, NumPy, Pandas, kurulum
+│   ├── 2adim1.py
+│   ├── 2adim2.py
+│   ├── 2adim3.py
+│   └── 2adim4.py
+├── gun3/                              # OpenCV & MediaPipe el tespiti
+│   ├── 3adim1.py
+│   ├── 3adim2.py
+│   └── 3adim3.py
+├── gun4/                              # Parmak sayma ve jest algılama
+│   ├── 4adim1.py
+│   ├── 4adim2.py
+│   └── 4adim3.py
+└── VisionDraw/                        # Bitirme projesi
+    ├── VisionDraw.py
+    ├── requirements.txt
+    ├── README.md
+    └── index.html
+```
 
 ---
 
