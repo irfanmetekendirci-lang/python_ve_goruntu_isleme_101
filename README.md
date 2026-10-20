@@ -48,7 +48,7 @@ Her gün kendi klasöründe (`gun1/` … `gun4/`) adım adım ilerleyen dosyalar
 |---|---|---|
 | [`4adim1.py`](./gun4/4adim1.py) | Ekran koordinat sistemi: Y aşağı indikçe büyür → parmak açık/kapalı kontrolü (`lm[8].y < lm[6].y`) | ~25 dk |
 | [`4adim2.py`](./gun4/4adim2.py) | Parmak uçları listesi (`[8, 12, 16, 20]`) ve `for` döngüsüyle açık parmakları sayma | ~35 dk |
-| [`4adim3.py`](./gun4/4adim3.py) | Başparmak kontrolü (X ekseni) ile 5 parmak sayımı, `cv2.rectangle` ile gösterge paneli ve basit jest tanıma (Yumruk / Açık El) | ~30 dk |
+| [`4adim3.py`](./gun4/4adim3.py) | Taş-Kağıt-Makas jest tanıma: 4 parmak sayımına göre karar mekanizması (Taş / Kağıt / Makas), `cv2.rectangle` ile bilgi paneli. Başparmak, yatayda hareket ettiği için hesaba katılmaz | ~30 dk |
 
 Günün sonunda bağımsız **VisionDraw** projesi incelenir ve portföye ekleme rehberi paylaşılır.
 
@@ -105,7 +105,7 @@ python gun2/2adim4.py
 # 3. Gün - İşaret parmağı takibi
 python gun3/3adim3.py
 
-# 4. Gün - Akıllı parmak sayacı
+# 4. Gün - Taş-Kağıt-Makas jest tanıma
 python gun4/4adim3.py
 
 # VisionDraw bitirme projesi
