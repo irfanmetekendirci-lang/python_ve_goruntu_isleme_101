@@ -4,6 +4,8 @@ Bu repo, **Ankara Üniversitesi YAZGİT** bünyesinde düzenlenen 2 haftalık (4
 
 > **Vizyonumuz:** Yazılımcılık artık her fonksiyonu ezbere yazmak değil; sistemin mantığını, veri akışını ve neyi nerede arayacağını bilmektir. Kodu yapay zekâ da üretir, dokümantasyonda da bulursunuz. Bu eğitimin asıl amacı; kameradan gelen ham verinin koda nasıl girdiğini, koordinatların nasıl okunduğunu ve bu verilerle neler üretilebileceğini uygulamalı olarak kavramaktır.
 
+📆 **Eğitim Tarihleri:** 12, 14, 19 ve 21 Ekim 2026
+
 Her gün kendi klasöründe (`gun1/` … `gun4/`) adım adım ilerleyen dosyalardan oluşur. Dosyaların içindeki yorum satırları ders anlatımının kendisidir; her dosyanın sonunda **[DUR & ÇALIŞTIR]** / **[DUR & KONTROL]** bölümleri ve olası hatalar yer alır.
 
 ---
@@ -12,7 +14,7 @@ Her gün kendi klasöründe (`gun1/` … `gun4/`) adım adım ilerleyen dosyalar
 
 ### Hafta 1: Python Mantığı ve Veriyi Anlama
 
-#### 1. Gün - Temel Python ve Algoritmik Düşünce (`gun1/`)
+#### 1. Gün - Temel Python ve Algoritmik Düşünce (`gun1/`) · 12 Ekim 2026
 
 | Dosya | Konu | Süre |
 |---|---|---|
@@ -21,7 +23,7 @@ Her gün kendi klasöründe (`gun1/` … `gun4/`) adım adım ilerleyen dosyalar
 | [`adim3.py`](./gun1/adim3.py) | Karar yapıları (`if` / `elif` / `else`), `for` ve `while` döngüleri | ~25 dk |
 | [`adim4.py`](./gun1/adim4.py) | **Ders sonu pratiği:** Mini koordinat filtresi (ekranın sağ yarısındaki noktaları ayıklama) | ~15-20 dk |
 
-#### 2. Gün - Fonksiyonlar ve Veri Kütüphanelerine Bakış (`gun2/`)
+#### 2. Gün - Fonksiyonlar ve Veri Kütüphanelerine Bakış (`gun2/`) · 14 Ekim 2026
 
 | Dosya | Konu | Süre |
 |---|---|---|
@@ -34,7 +36,7 @@ Her gün kendi klasöründe (`gun1/` … `gun4/`) adım adım ilerleyen dosyalar
 
 ### Hafta 2: OpenCV & MediaPipe ile Bilgisayarlı Görü
 
-#### 3. Gün - OpenCV & Canlı El Tespiti (`gun3/`)
+#### 3. Gün - OpenCV & Canlı El Tespiti (`gun3/`) · 19 Ekim 2026
 
 | Dosya | Konu | Süre |
 |---|---|---|
@@ -42,7 +44,7 @@ Her gün kendi klasöründe (`gun1/` … `gun4/`) adım adım ilerleyen dosyalar
 | [`3adim2.py`](./gun3/3adim2.py) | BGR → RGB dönüşümü, MediaPipe Hands modelini başlatma ve 21 eklem noktasını çizdirme | ~30 dk |
 | [`3adim3.py`](./gun3/3adim3.py) | Normalize koordinatları piksele çevirme (`kare.shape`), işaret parmağı takibi (`cv2.circle`, `cv2.putText`) | ~20 dk |
 
-#### 4. Gün - Jest Algılama ve Akıllı Parmak Sayacı (`gun4/`)
+#### 4. Gün - Jest Algılama ve Akıllı Parmak Sayacı (`gun4/`) · 21 Ekim 2026
 
 | Dosya | Konu | Süre |
 |---|---|---|
@@ -152,3 +154,9 @@ python_ve_goruntu_isleme_101/
 ## 🤝 Katkı ve İletişim
 
 Bu eğitim materyalleri **Ankara Üniversitesi YAZGİT (Yapay Zeka ve Görüntü İşleme Topluluğu)** bünyesinde öğrenciler için hazırlanmıştır. Sorularınız, hata bildirimleri veya geliştirmeler için Issue açabilir veya topluluk kanallarından iletişime geçebilirsiniz.
+
+### 👥 Hazırlayanlar
+
+* [@irfanmetekendirci-lang](https://github.com/irfanmetekendirci-lang)
+
+> Bu repodaki bazı commit'lerde yapay zekâ asistanı Claude (Anthropic) yalnızca commit işlemlerinde kullanılmıştır.
